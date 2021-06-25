@@ -4,36 +4,9 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building'
-                @ECHO OFF
-                echo "hello bat file successfully run in Jenkins"
-
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
- 
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing '
-            }
-        }
-        stage('Release') {
-            steps {
-                echo 'Releasing'
-                bat '''@echo off 
-                md REALEASE'''
-                bat '''@echo off
-                move SomeName.exe REALEASE'''
-                
+                sh label: '', script: '''#!/bin/bash
+                    echo "hello world" 
+                '''
             }
         }
     }
