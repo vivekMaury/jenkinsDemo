@@ -1,2 +1,40 @@
-@echo off
-echo "hello bat file successfully run in Jenkins"
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building'
+                @echo off
+                echo "hello bat file successfully run in Jenkins"
+
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+ 
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing '
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
+                bat '''@echo off 
+                md REALEASE'''
+                bat '''@echo off
+                move SomeName.exe REALEASE'''
+                
+            }
+        }
+    }
+}
