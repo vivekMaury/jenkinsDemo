@@ -4,9 +4,36 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh label: '', script: '''#!/bin/bash
-                    echo "hello world" 
-                '''
+                echo 'Hello World'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building'
+                bat '''@ECHO OFF
+                g++ main.cpp -o SomeName.exe'''
+                
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+ 
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing '
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
+                bat '''@echo off 
+                md REALEASE'''
+                bat '''@echo off
+                move SomeName.exe REALEASE'''
+                
             }
         }
     }
