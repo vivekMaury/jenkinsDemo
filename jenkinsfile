@@ -11,6 +11,7 @@ pipeline {
                 echo 'Hello World'
 		echo 'testing'
 		echo 'testing57"
+		echo 'tetsting 3.12"
             }
         }
         stage('Build') {
