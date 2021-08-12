@@ -8,6 +8,7 @@ pipeline {
             steps {
                 echo 'Hello World'
 		echo 'testing'
+		echo 'testing57"
             }
         }
         stage('Build') {
